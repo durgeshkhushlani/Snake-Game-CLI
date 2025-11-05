@@ -80,8 +80,9 @@ How to Run
 1. Download snake.exe
 2. Double-click or run from console:
       cd path\to\folder
+      command to run => g++ snake.cpp -o snake.exe
       snake.exe
-3. Choose difficulty and start playing!
+4. Choose difficulty and start playing!
 
 Controls
 - Arrow Keys or WASD to move
@@ -110,7 +111,13 @@ Tips
 
 Game Over
 
-Ends when you hit a wall, obstacle, or your own body. Try again to beat your high score!
+Ends when you hit a wall, obstacle, or your own body. Try again to beat your high score
+
+## Author
+
+**Durgesh Khushlani**
+
+**Moksh Mehta**
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
