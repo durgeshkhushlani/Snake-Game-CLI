@@ -4,6 +4,7 @@ This is a simple console based game. It can be played on windows machine only us
 ----------------------------------------------------------------------------------------------------------------------
 
 **A. For Developers (Who wants to further extend the functionality of this code)**
+
 For Developers: Architecture & Extension Guide
 Overview
 Classic Snake in C++ (Windows Console)
