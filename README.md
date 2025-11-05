@@ -6,25 +6,26 @@ This is a simple console based game. It can be played on windows machine only us
 **A. For Developers (Who wants to further extend the functionality of this code)**
 
 For Developers: Architecture & Extension Guide
+
 Overview
+
 Classic Snake in C++ (Windows Console)
 
 Multi-level difficulty, special food, obstacles, scoring
 
 Tech Stack
+
 Language: C++11+
+
 Platform: Windows (Console API)
 
 Dependencies: windows.h (console), conio.h (input), standard C++ libs
 
 Core Components
-Position struct: 2D coordinates, collision checks
-
-Snake class: Controls movement, growth, collision (efficient head/tail ops using deque)
-
-Food struct: Regular/special items, timed expiry, collision-free spawn
-
-Game class: Controls game loop, rendering, input, scoring, difficulty, obstacles
+- Position struct: 2D coordinates, collision checks
+- Snake class: Controls movement, growth, collision (efficient head/tail ops using deque)
+- Food struct: Regular/special items, timed expiry, collision-free spawn
+- Game class: Controls game loop, rendering, input, scoring, difficulty, obstacles
 
 Difficulty
 | Mode   | Speed(ms) | Start Obstacles | Obstacles per 30 pts |
@@ -34,16 +35,19 @@ Difficulty
 | Hard   | 80        | 12              | +3                   |
 
 Rendering
+
 Uses Windows Console color codes for snake, food, obstacles, score display
 
 Board: 40x20, origin (0,0) top-left, cursor hidden for smoothness
 
 Input
+
 Arrow keys/WASD for movement, Q to quit
 
 Prevents reversing direction to avoid instant self-collision
 
 Building
+
 Requires Windows + C++11 or later
 
 Visual Studio: cl /EHsc /std:c++14 snake_game.cpp
@@ -51,6 +55,7 @@ Visual Studio: cl /EHsc /std:c++14 snake_game.cpp
 MinGW: g++ -std=c++11 snake_game.cpp -o snake.exe
 
 Possible Extensions
+
 Speed/pause controls, save scores, larger boards, power-ups, multiplayer, improved rendering, file-based configs, and cross-platform support
 
 For more details, see comments in code.
@@ -63,6 +68,7 @@ Feel free to modify/extend—this is an educational project!
 **B. For Users (who wants to run this game on their machine)**
 
 Welcome!
+
 Enjoy the classic Snake game with multiple difficulty levels, special foods, and obstacles!
 
 System Requirements
@@ -103,18 +109,8 @@ Tips
 - Use the full board to avoid trapping yourself
 
 Game Over
+
 Ends when you hit a wall, obstacle, or your own body. Try again to beat your high score!
-
-Screen Layout
-
-+----------------------------------------+
-|                                        |
-|          (Game Board Area)             |
-|                                        |
-+----------------------------------------+
-
-Score: XXX    High Score: XXX    Level: Easy/Medium/Hard
-
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
