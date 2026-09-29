@@ -146,6 +146,21 @@ struct Food {
     }
 };
 
+// Decides how many obstacles a new score milestone should add.
+// Returns 0 if score/50 has not advanced past lastObstacleScore.
+// On a new milestone, updates lastObstacleScore and returns the obstacle count for difficulty.
+int computeObstaclesToAdd(int score, int &lastObstacleScore, Difficulty difficulty) {
+    int milestone = score / 50;
+    if (milestone <= 0 || milestone <= lastObstacleScore) return 0;
+    lastObstacleScore = milestone;
+    switch (difficulty) {
+    case Difficulty::EASY: return 1;
+    case Difficulty::MEDIUM: return 2;
+    case Difficulty::HARD: return 3;
+    }
+    return 0;
+}
+
 class Game {
     Snake snake;
     Food food;
@@ -321,15 +336,8 @@ private:
             running = false;
         }
 
-        int milestone = score / 50;
-        if (milestone > 0 && milestone > lastObstacleScore) {
-            lastObstacleScore = milestone;
-            int toAdd = 0;
-            switch (difficulty) {
-            case Difficulty::EASY: toAdd = 1; break;
-            case Difficulty::MEDIUM: toAdd = 2; break;
-            case Difficulty::HARD: toAdd = 3; break;
-            }
+        int toAdd = computeObstaclesToAdd(score, lastObstacleScore, difficulty);
+        if (toAdd > 0) {
             spawnObstacles((int)obstacles.size() + toAdd);
         }
     }
